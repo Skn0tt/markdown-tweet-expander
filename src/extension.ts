@@ -1,27 +1,63 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import fetch from "node-fetch";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "markdown-tweet-expander" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('markdown-tweet-expander.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Markdown Tweet Expander!');
-	});
-
-	context.subscriptions.push(disposable);
+interface TwitterPublishResponse {
+  url: string;
+  author_name: string;
+  author_url: string;
+  html: string;
+  width: number;
+  height: number | null;
+  type: "rich" | string;
+  cache_age: string;
+  provider_name: string;
+  provider_url: string;
+  version: string;
 }
 
-// this method is called when your extension is deactivated
+async function fetchTweet(url: string): Promise<string> {
+  const res = await fetch(
+    `https://publish.twitter.com/oembed?url=${encodeURIComponent(url)}`
+  );
+  const { html } = (await res.json()) as TwitterPublishResponse;
+  return html;
+}
+
+export function activate(context: vscode.ExtensionContext) {
+  let disposable = vscode.commands.registerCommand(
+    "markdown-tweet-expander.expand",
+    async () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+
+      const { document, selection } = editor;
+      let url = document.getText(selection);
+      if (!url.startsWith("http")) {
+        url = "https://" + url;
+      }
+
+      await vscode.window.withProgress(
+        {
+          location: vscode.ProgressLocation.Notification,
+          title: "Fetching tweet ...",
+        },
+        async () => {
+          try {
+            const html = await fetchTweet(url);
+            editor.edit((editBuilder) => {
+              editBuilder.replace(selection, html);
+            });
+          } catch (error) {
+            vscode.window.showErrorMessage("Failed to fetch tweet.");
+          }
+        }
+      );
+    }
+  );
+
+  context.subscriptions.push(disposable);
+}
+
 export function deactivate() {}
