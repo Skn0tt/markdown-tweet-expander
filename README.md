@@ -4,7 +4,7 @@
 ![](https://badgen.net/vs-marketplace/d/skn0tt.markdown-tweet-expander)
 ![](https://badgen.net/vs-marketplace/i/skn0tt.markdown-tweet-expander)
 
-Easily embed tweets into your notes. It's using [publish.twitter.com](https://publish.twitter.com) under the hood.
+Easily embed tweets into your notes. Using [publish.twitter.com](https://publish.twitter.com) under the hood.
 
 > Another <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a> extension in the making, this time for people who like to embed tweets in their notes ^^
 > 
@@ -17,10 +17,6 @@ Easily embed tweets into your notes. It's using [publish.twitter.com](https://pu
 2. Highlight a Tweet URL
 3. `CMD+ALT+P`; "Expand Tweet"
 4. Profit
-
-## How it works
-
-Under the hood, it uses publish.twitter.com to generate the tweet markup.
 
 ## TODO
 
