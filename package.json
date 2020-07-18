@@ -2,7 +2,7 @@
 	"name": "markdown-tweet-expander",
 	"displayName": "Markdown Tweet Expander",
 	"description": "Expand tweet links to markdown",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -12,7 +12,12 @@
 	"repository": "https://github.com/skn0tt/markdown-tweet-expander",
 	"publisher": "skn0tt",
 	"license": "MIT",
-	"keywords": ["twitter", "markdown", "notes", "productivity"],
+	"keywords": [
+		"twitter",
+		"markdown",
+		"notes",
+		"productivity"
+	],
 	"activationEvents": [
 		"onCommand:markdown-tweet-expander.expand"
 	],
