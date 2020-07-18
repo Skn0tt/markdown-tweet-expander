@@ -9,6 +9,10 @@
 	"categories": [
 		"Other"
 	],
+	"repository": "https://github.com/skn0tt/markdown-tweet-expander",
+	"publisher": "skn0tt",
+	"license": "MIT",
+	"keywords": ["twitter", "markdown", "notes", "productivity"],
 	"activationEvents": [
 		"onCommand:markdown-tweet-expander.expand"
 	],
