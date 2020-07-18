@@ -1,65 +1,27 @@
-# markdown-tweet-expander README
+# markdown-tweet-expander
 
-This is the README for your extension "markdown-tweet-expander". After writing up a brief description, we recommend including the following sections.
+![](https://badgen.net/vs-marketplace/v/skn0tt.markdown-tweet-expander)
+![](https://badgen.net/vs-marketplace/d/skn0tt.markdown-tweet-expander)
+![](https://badgen.net/vs-marketplace/i/skn0tt.markdown-tweet-expander)
 
-## Features
+Easily embed tweets into your notes. It's using [publish.twitter.com](https://publish.twitter.com) under the hood.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+> Another <a href="https://twitter.com/code?ref_src=twsrc%5Etfw">@code</a> extension in the making, this time for people who like to embed tweets in their notes ^^
+> 
+> ![Demo Gif](./demo.gif)<br>
+> &mdash; Simon Knott (@skn0tt) <a href="https://twitter.com/skn0tt/status/1284019905986273281">July 17, 2020</a>
 
-For example if there is an image subfolder under your extension project workspace:
+## Getting Started
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Install the extension
+2. Highlight a Tweet URL
+3. `CMD+ALT+P`; "Expand Tweet"
+4. Profit
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## How it works
 
-## Requirements
+Under the hood, it uses publish.twitter.com to generate the tweet markup.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## TODO
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [ ] Create a Logo ([Help Wanted](mailto:info@simonknott.de?subject=I%20wanna%20help%20you%20with%20markdown-tweet-expander!&body=Hi%20Simon%2C%0A%0A...%0A))
